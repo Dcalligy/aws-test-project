@@ -9,16 +9,14 @@ import boto3
 
 answerList = [
     [1, True, False, False, True, False, True, False, False, False, True, False, False, False, True, True],
-    [2, True, True, False, False, True, True, False, False, False, True, False, False, False, True, True],
-    [3, True, True, True, False, False, True, False, False, False, True, False, False, False, True, True],
-    [4, False, True, False, True, False, False, True, False, False, True, False, False, False, True, True],
-    [5, False, False, True, False, False, False, False, True, False, True, False, False, False, True, True],
-    [6, True, False, True, True, False, True, False, False, False, True, False, False, False, True, True],
-    [7, False, True, True, False, False, False, False, True, True, True, False, False, False, True, True],
-    [8, True, True, False, False, True, False, False, False, True, True, False, False, False, True, True],
-    [9, False, False, True, False, False, False, True, False, True, True, False, False, False, True, True]]
-
-print(len(answerList) % 3)
+    [2, True, True, False, False, True, True, False, False, False, True, True, False, False, False, False],
+    [3, True, True, True, False, False, True, False, False, False, False, False, False, True, False, True],
+    [4, False, True, False, True, False, False, True, False, False, True, False, False, False, False, True],
+    [5, False, False, True, False, False, False, False, True, False, False, False, True, False, True, False],
+    [6, True, False, True, True, False, True, False, False, False, True, False, False, False, True, False],
+    [7, False, True, True, False, False, False, False, True, True, False, False, False, True, False, True],
+    [8, True, True, False, False, True, False, False, False, True, True, False, True, False, True, True],
+    [9, False, False, True, False, False, False, True, False, True, True, True, True, False, False, False]]
 
 groupList = []
 Dict = {}
@@ -30,8 +28,11 @@ def sortAlgo(answerList):
     tempGroup = []
     tempStuID = []
     tempGroup.append(answerList[0])
-    tempStuID.append(answerList[0][0])
+    'tempStuID.append(answerList[0][0])'
     stuPos = 0
+
+
+
 
     while student <= length:
         student += 1
@@ -92,36 +93,65 @@ def sortAlgo(answerList):
                 valCheck = False
 
         if valCheck == True:
-            tempGroup.append(answerlist[student])
+            tempGroup.append(answerList[student])
             tempStuID.append(stuPos)
+
+        print(tempStuID)
 
         if len(tempGroup) == 3:
             groupList.append(tempGroup)
             answerList.pop(0)
-            for i in tempStuID:
-                answerList.pop(i)
+            tempStuID[0] = tempStuID[0] - 1
+            answerList.pop(tempStuID[0])
+            tempStuID[1] = tempStuID[1]-2
+            answerList.pop(tempStuID[1])
             break
+
+    for i in answerList:
+        print(i)
+    print('')
+    for i in groupList:
+        for x in i:
+            print(x)
+        print('')
+    print('')
+
+    stuAdded = False
 
     if len(answerList) > 3:
         sortAlgo(answerList)
     else:
         for stu in answerList:
+            stuAdded = False
             groupCount = 0
             stuCount = 0
             elementCount = 1
-            while groupCount < len(groupList):
+            while groupCount < len(groupList) and stuAdded == False:
                 if len(groupList[groupCount]) > 3:
                     'skip'
+                    groupCount += 1
                 else:
-                    while stuCount <= 3:
-                        while elementCount <= 3:
-                            if stu[elementCount] == groupList[groupCount][stuCount][elementCount]:
-                                groupList[groupCount].append(stu)
+                    if stuAdded == False:
+                        while stuCount <= 3:
+                            if stuAdded == False:
+                                while elementCount <= 3:
+                                    if stu[elementCount] == groupList[groupCount][stuCount][elementCount]:
+                                        groupList[groupCount].append(stu)
+                                        stuAdded = True
+                                        break
+                                    else:
+                                        elementCount += 1
+                                stuCount += 1
                             else:
-                                elementCount += 1
-                        stuCount += 1
+                                break
+                    else:
+                        break
                     groupCount += 1
 
 sortAlgo(answerList)
-print(groupList)
+
+for i in groupList:
+    for x in i:
+        print(x)
+    print('')
 'This is the part where we put the groupList into the database'

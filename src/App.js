@@ -32,6 +32,7 @@ class App extends Component {
             <div>
             <button onClick={ this.handleSignup }>Toggle</button>
             { !signedUp ? <SignUpForm /> : <SignInForm />}
+            
           </div>
           <Footer />
           </Router>

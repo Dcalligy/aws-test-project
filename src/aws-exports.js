@@ -2,22 +2,22 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-1",
-    "aws_cognito_identity_pool_id": "us-east-1:e879ab12-9be0-4eee-9023-a504cecc7368",
+    "aws_cognito_identity_pool_id": "us-east-1:0b1b9cf8-0f99-4ed9-a4d5-00a72f9feb97",
     "aws_cognito_region": "us-east-1",
-    "aws_user_pools_id": "us-east-1_djnvqvxRX",
-    "aws_user_pools_web_client_id": "7kdh5e5e3sqnkkpf5r1eqrgp58",
+    "aws_user_pools_id": "us-east-1_lsfCsqiTx",
+    "aws_user_pools_web_client_id": "5lk4bbutnv52r3ls79npn9tnni",
     "oauth": {},
-    "aws_cloud_logic_custom": [
-        {
-            "name": "studentsapi",
-            "endpoint": "https://qyu1f3nmhe.execute-api.us-east-1.amazonaws.com/testenv",
-            "region": "us-east-1"
-        }
-    ],
     "aws_dynamodb_all_tables_region": "us-east-1",
     "aws_dynamodb_table_schemas": [
         {
-            "tableName": "studentResponses-testenv",
+            "tableName": "studentTable-projenv",
+            "region": "us-east-1"
+        }
+    ],
+    "aws_cloud_logic_custom": [
+        {
+            "name": "studentsApi",
+            "endpoint": "https://tezju2prr4.execute-api.us-east-1.amazonaws.com/projenv",
             "region": "us-east-1"
         }
     ]

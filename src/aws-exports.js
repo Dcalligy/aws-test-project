@@ -2,22 +2,22 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-1",
-    "aws_cognito_identity_pool_id": "us-east-1:0b1b9cf8-0f99-4ed9-a4d5-00a72f9feb97",
+    "aws_cognito_identity_pool_id": "us-east-1:3727556e-5d56-459b-ad8e-5aa61cc425d3",
     "aws_cognito_region": "us-east-1",
-    "aws_user_pools_id": "us-east-1_lsfCsqiTx",
-    "aws_user_pools_web_client_id": "5lk4bbutnv52r3ls79npn9tnni",
+    "aws_user_pools_id": "us-east-1_e9xaRasMn",
+    "aws_user_pools_web_client_id": "4ovuuvt9mj1tia35pqugah17fj",
     "oauth": {},
-    "aws_dynamodb_all_tables_region": "us-east-1",
-    "aws_dynamodb_table_schemas": [
+    "aws_cloud_logic_custom": [
         {
-            "tableName": "studentTable-projenv",
+            "name": "studentsapi",
+            "endpoint": "https://p714kevuqi.execute-api.us-east-1.amazonaws.com/projectenv",
             "region": "us-east-1"
         }
     ],
-    "aws_cloud_logic_custom": [
+    "aws_dynamodb_all_tables_region": "us-east-1",
+    "aws_dynamodb_table_schemas": [
         {
-            "name": "studentsApi",
-            "endpoint": "https://tezju2prr4.execute-api.us-east-1.amazonaws.com/projenv",
+            "tableName": "answersTable-projectenv",
             "region": "us-east-1"
         }
     ]

@@ -2,25 +2,11 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-1",
-    "aws_cognito_identity_pool_id": "us-east-1:e879ab12-9be0-4eee-9023-a504cecc7368",
+    "aws_cognito_identity_pool_id": "us-east-1:cf93ffd5-a5fe-4065-87e0-25bda4db7260",
     "aws_cognito_region": "us-east-1",
-    "aws_user_pools_id": "us-east-1_djnvqvxRX",
-    "aws_user_pools_web_client_id": "7kdh5e5e3sqnkkpf5r1eqrgp58",
-    "oauth": {},
-    "aws_cloud_logic_custom": [
-        {
-            "name": "studentsapi",
-            "endpoint": "https://qyu1f3nmhe.execute-api.us-east-1.amazonaws.com/testenv",
-            "region": "us-east-1"
-        }
-    ],
-    "aws_dynamodb_all_tables_region": "us-east-1",
-    "aws_dynamodb_table_schemas": [
-        {
-            "tableName": "studentResponses-testenv",
-            "region": "us-east-1"
-        }
-    ]
+    "aws_user_pools_id": "us-east-1_XgMdrTwkW",
+    "aws_user_pools_web_client_id": "6nbs7qktlu1s6nc9ec81u55dg9",
+    "oauth": {}
 };
 
 

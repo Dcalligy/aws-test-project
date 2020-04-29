@@ -120,7 +120,6 @@ class SignUpForm extends Component {
                 <TextInput
                   id="confirmationCode"
                   label="Confirmation Code: "
-                  type="text"
                   value={this.state.confirmationCode}
                   onChange={this.handleChange}
                 />

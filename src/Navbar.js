@@ -24,8 +24,8 @@ export default class NavBar extends Component{
 
                     <a className="navbar-brand" href="/">USF</a>
                     <a className="navbar-brand" href="/">Home</a>
-                    <a className="navbar-brand" href="/groups">Groups</a>
-                    <a className="navbar-brand" href="/questionnaire">Questionnaire</a>
+                    <a className="navbar-brand" href="#">Groups</a>
+                    <a className="navbar-brand" href="#">Questionnaire</a>
                     
                   </ul>
                   

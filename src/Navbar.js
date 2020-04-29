@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-//import { Auth } from 'aws-amplify';
+import { Auth } from 'aws-amplify';
+import './App.css';
+
+
 
 export default class NavBar extends Component{
-  /*handleLogOut = async event =>{
+  handleLogOut = async event =>{
     event.preventDefault();
     try{
       Auth.signOut();
@@ -11,47 +14,50 @@ export default class NavBar extends Component{
     }catch(error){
       console.log(error.message);
     }
-  }*/
+  }
   render(){
       return(
           // Header using Bootstrap
           <header role="banner">
-            <nav className="navbar navbar-custom">
-            <div className="container-fluid">
-              <div className="collapse navbar-collapse" id="myNavbar">
-                <div className="navbar-header">
-                  <ul className="nav navbar-nav">
+            <nav className="navbar navbar-default navbar-usf-colors">
+        <button type="button" 
+        className="navbar-toggle" 
+        data-toggle="collapse" 
+        data-target="#navbarNavDropdown">
 
-                    <a className="navbar-brand" href="/">USF</a>
-                    <a className="navbar-brand" href="/">Home</a>
-                    <a className="navbar-brand" href="/groups">Groups</a>
-                    <a className="navbar-brand" href="/questionnaire">Questionnaire</a>
-                    
-                  </ul>
-                  
-                </div>
-                <div className="navbar-brand">
-                  <div className="navbar-brand">
-                    {!this.props.auth.isAuthenticated && this.props.auth.user &&(
+    <span className="sr-only">Toggle navigation</span>
+    <span className="icon-bar"></span>
+    <span className="icon-bar"></span>
+    <span className="icon-bar"></span>
+</button>
+  <div className="collapse navbar-collapse" id="navbarNavDropdown">
+            
+                  <ul className="nav navbar-nav ">
+
+                    <li><a className="navbar-brand" href="https://www.usf.edu/">USF</a></li>
+                    <li><a className="navbar-brand" href="/">Home</a></li>
+                    <li><a className="navbar-brand" href="/groups">Groups</a></li>
+                    <li><a className="navbar-brand" href="/questionnaire">Questionnaire</a></li>
+                    <li><a className="navbar-brand">                    {!this.props.auth.isAuthenticated && this.props.auth.user &&(
                       <p>
                         Hello {this.props.auth.user.username}
                       </p>
                     )}
-                    <div className="buttons">
+                    <li><a>
                       {!this.props.auth.isAuthenticated && (
-                        <a href="/login" className="btn btn-custom">
+                       <li> <a href="/login" className="navbar-brand">
                           Log in
-                        </a>
+                        </a></li>
                       )}
                       {this.props.auth.isAuthenticated && (
-                        <a href="/"  className="btn btn-custom">
+                        <li><a href="/" onClick={this.handleLogOut} className="navbar-brand">
                           Log out
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
+                        </a></li>
+                      )}</a></li> </a></li>
+        
+        
+                  </ul>
+                  
             </div>
             </nav>  
           </header>

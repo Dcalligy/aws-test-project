@@ -75,10 +75,13 @@ class SignInForm extends Component {
           );
       } else {
         return (
+          
             <article>
+                          <h1>Login</h1>
+          <div className="well text-left loginWell">
             <section className="section auth">
             <div className="container">
-                <h1>Login</h1>
+
                 <form onSubmit={ this.handleSubmit }>
                   <div className="field">
                     <label htmlFor="username">Username: </label>
@@ -104,7 +107,7 @@ class SignInForm extends Component {
                   </div>
                   <div className="field">
                     <p className="control">
-                      <button type="submit" className="btn btn-custom">
+                      <button type="submit" className="btn btn-custom btn-login">
                         Submit
                       </button>
                     </p>
@@ -112,6 +115,7 @@ class SignInForm extends Component {
                 </form>
             </div>
           </section>
+          </div>
           </article>
         );
       }

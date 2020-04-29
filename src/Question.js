@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Amplify from 'aws-amplify';
-//import { API } from 'aws-amplify';
-//import axios from "axios";
+import { API } from 'aws-amplify';
+import './App.css';
+import axios from "axios";
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 
@@ -70,7 +71,7 @@ class Question extends Component {
     //const { verified } = this.state;
     e.preventDefault();
     // add calls to AWS API Gatewary and add items endpoint here
-    /*try{
+    try{
       const params = {
         AvailableAfternoon: this.state.dict['AvailableAfternoon'],
         AvailableEvenings: this.state.dict['AvailableEvenings'],
@@ -110,7 +111,7 @@ class Question extends Component {
       }});
     }catch(err){
       console.log(`An error has occured: ${err}`);
-    }*/
+    }
     e.target.reset();
   }
 
@@ -128,194 +129,194 @@ class Question extends Component {
 
   render() {
       return (
+        
+        
+        
         <article>
         <div className="container">
         <h1>Questionaire</h1>
         </div>
 
-        <div className="well d-inline-flex ">
-          <section className="section questions">
+        <div className="well text-left questionWell">
+          <section className="section questions ">
         
         
-        <div className="container ">
+        <div className="container">
             <div className="container">
               <form onSubmit={this.handleSubmit}>
-              <legend className="col-form-label col-lg-12">Times available</legend>
-                <div className="form-check col-lg-12">
-                <label className="form-check-label">Morning:   </label>
+              <legend>Times available</legend>
+                <div className="form-check">
                 <input type="checkbox"
-                  className="form-check-input col-sm-2"
+                  className="form-check-input"
                   id="AvailableMornings"
                   //label="AvailableMornings"
                   checked={!!this.state.AvailableMornings}
                   name="AvailableMornings"
                   onChange={this.handleChange}
-                /></div>
+                /><label className="form-check-label">Morning</label></div>
         
-        <div className="form-check col-lg-12">
-        <label className="form-check-label">Afternoon:   </label>
+        <div className="form-check">
+        
         <input type="checkbox"
-                  className="form-check-input col-lg-2"
+                  className="form-check-input"
                   id="AvailableAfternoon"
                   //label="AvailableAfternoon"
                   checked={!!this.state.AvailableAfternoon}
                   name="AvailableAfternoon"
                   onChange={this.handleChange}
-                /></div>
-          <div className="form-check col-lg-12">         
-        <label className="form-check-label">Evening:   </label>
+                /><label className="form-check-label">Afternoon</label></div>
+          <div className="form-check">         
+        
 
         <input type="checkbox"
-                  className="form-check-input col-sm-2"
+                  className="form-check-input"
                   id="AvailableEvenings"
                   //label="AvailableEvenings"
                   checked={!!this.state.AvailableEvenings}
                   name="AvailableEvenings"
                   onChange={this.handleChange}
-                /></div>
+                /><label className="form-check-label">Evening</label></div>
                 
         
-                <br className="col-lg-12"></br>
-        <hr className="col-lg-12"></hr>
-        <legend className="col-form-label col-lg-12">Preferred Projects</legend>
+                <br></br>
+        <hr></hr>
+        <legend>Preferred Projects</legend>
         <br></br>
         
-               <div className="form-check col-lg-12">
-                <label className="form-check-label">Project 1: </label>
+               <div className="form-check">
+                
                 <input type="checkbox"
-                  className="form-check-input col-sm-2"
+                  className="form-check-input"
                   id="Project1"
                   //label="Project1"
                   checked={!!this.state.Project1}
                   name="Project1"
                   onChange={this.handleChange}
-                /></div>
+                /><label className="form-check-label">Project 1</label></div>
         
-        <div className="form-check col-lg-12">
-                <label className="form-check-label">Project 2: </label>
+        <div className="form-check">
+                
                 <input type="checkbox"
-                  className="form-check-input col-sm-2"
+                  className="form-check-input"
                   id="Project2"
                   //label="Project2"
                   checked={!!this.state.Project2}
                   name="Project2"
                   onChange={this.handleChange}
-                /></div>
-          <div className="form-check col-lg-12">
-                <label className="form-check-label">Project 3: </label>
+                /><label className="form-check-label">Project 2</label></div>
+          <div className="form-check">
+                
                 <input type="checkbox"
-                  className="form-check-input col-sm-2"
+                  className="form-check-input"
                   id="Project3"
                   //label="Project3"
                   checked={!!this.state.Project3}
                   name="Project3"
                   onChange={this.handleChange}
-                /></div>
-        <div className="form-check col-lg-12">
-                <label className="form-check-label">Project 4: </label>
+                /><label className="form-check-label">Project 3</label></div>
+        <div className="form-check">
+                
                 <input type="checkbox"
-                  className="form-check-input col-sm-2"
+                  className="form-check-input"
                   id="Project4"
                   //label="Project4"
                   checked={!!this.state.Project4}
                   name="Project4"
                   onChange={this.handleChange}
-                /></div>
-        <div className="form-check col-lg-12">
-                <label className="form-check-label">Project 5: </label>
+                /><label className="form-check-label">Project 4</label></div>
+        <div className="form-check">
+                
                 <input type="checkbox"
-                  className="form-check-input col-sm-2"
+                  className="form-check-input"
                   id="Project5"
                   //label="Project5"
                   checked={!!this.state.Project5}
                   name="Project5"
                   onChange={this.handleChange}
-                /></div>
-        <div className="form-check col-lg-12">
-                <label className="form-check-label">Project 6: </label>
+                /><label className="form-check-label">Project 5</label></div>
+        <div className="form-check">
                 <input type="checkbox"
-                  className="form-check-input col-sm-2"
+                  className="form-check-input"
                   id="Project6"
                   //label="Project6"
                   checked={!!this.state.Project6}
                   name="Project6"
                   onChange={this.handleChange}
-                /></div>
+                /><label className="form-check-label">Project 6</label></div>
                 
         
-                <br className="col-lg-12"></br>
-        <hr className="col-lg-12"></hr>
-                    <legend className="col-form-label col-lg-12">Skills</legend>
-                <div className="form-check col-lg-12">
-                <label className="form-check-label">Computer Engineering:   </label>
+                <br></br>
+        <hr></hr>
+                    <legend>Skills</legend>
+                <div className="form-check">
+                
                 <input type="checkbox"
-                  className="form-check-input col-sm-2"
+                  className="form-check-input"
                   id="SkillCompEngineering"
                   //label="SkillCompEngineering"
                   checked={!!this.state.SkillCompEngineering}
                   name="SkillCompEngineering"
                   onChange={this.handleChange}
-                /></div>
+                /><label className="form-check-label">Computer Engineering</label></div>
         
-        <div className="form-check col-lg-12">
-        <label className="form-check-label">Databases:   </label>
+        <div className="form-check">
+        
         <input type="checkbox"
-                  className="form-check-input col-sm-2"
+                  className="form-check-input"
                   id="SkillDatabase"
                   //label="SkillDatabase"
                   checked={!!this.state.SkillDatabase}
                   name="SkillDatabase"
                   onChange={this.handleChange}
-                /></div>
-          <div className="form-check col-lg-12">         
-        <label className="form-check-label">Mechanical Engineering:   </label>
+                /><label className="form-check-label">Databases</label></div>
+          <div className="form-check">         
+        
 
         <input type="checkbox"
-                  className="form-check-input col-sm-2"
+                  className="form-check-input"
                   id="SkillMechEngineering"
                   //label="SkillMechEngineering"
                   checked={!!this.state.SkillMechEngineering}
                   name="SkillMechEngineering"
                   onChange={this.handleChange}
-                /></div>
-                 <div className="form-check col-lg-12">         
-        <label className="form-check-label">Network Design:   </label>
+                /><label className="form-check-label">Mechanical Engineering</label></div>
+                 <div className="form-check">         
+        
 
         <input type="checkbox"
-                  className="form-check-input col-sm-2"
+                  className="form-check-input"
                   id="SkillNetworkDesign"
                   //label="SkillNetworkDesign"
                   checked={!!this.state.SkillNetworkDesign}
                   name="SkillNetworkDesign"
                   onChange={this.handleChange}
-                /></div>
-         <div className="form-check col-lg-12">         
-        <label className="form-check-label">Programming:   </label>
+                /><label className="form-check-label">Network Design</label></div>
+         <div className="form-check">         
+        
 
         <input type="checkbox"
-                  className="form-check-input col-sm-2"
+                  className="form-check-input"
                   id="SkillProgramming"
                   //label="SkillProgramming"
                   checked={!!this.state.SkillProgramming}
                   name="SkillProgramming"
                   onChange={this.handleChange}
-                /></div>
-         <div className="form-check col-lg-12">         
-        <label className="form-check-label">Web Design:   </label>
+                /><label className="form-check-label">Programming</label></div>
+         <div className="form-check">         
+        
 
         <input type="checkbox"
-                  className="form-check-input col-sm-2"
+                  className="form-check-input"
                   id="SkillWebDesign"
                   //label="SkillWebDesign"
                   checked={!!this.state.SkillWebDesign}
                   name="SkillWebDesign"
                   onChange={this.handleChange}
-                /></div>
+                /><label className="form-check-label">Web Design</label></div>
         
-                <br className="col-lg-12"></br>
-        <hr className="col-lg-12"></hr>
-                <div className="form-check col-lg-2">
-        
+                <br className=""></br>
+                <hr></hr>
+                <div className="form-check">
                     <button type="submit" className="btn btn-custom">
                       Submit
                     </button>

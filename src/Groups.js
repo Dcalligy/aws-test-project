@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Groups extends Component{
     render(){
-        return(
+        return (
         <article>
             <div className="container">
                 <h1>Groups</h1> 

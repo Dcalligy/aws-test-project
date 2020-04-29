@@ -122,11 +122,8 @@ class Question extends Component {
   }
   
 
-  render() {
-      return (
-        
-        
-        
+render() {
+    return (
         <article>
         <div className="container">
         <h1>Questionaire</h1>

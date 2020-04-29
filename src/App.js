@@ -43,7 +43,6 @@ class App extends Component {
         this.setState({ isAuthenticating: false });
     }
     render() {
-
         const authProps = {
             isAuthenticated: this.state.isAuthenticated,
             user: this.state.user,
@@ -51,7 +50,6 @@ class App extends Component {
             setUser: this.setUser
         }
         return (
-       
            !this.state.isAuthenticated &&
            <div className="App">
                <Router>

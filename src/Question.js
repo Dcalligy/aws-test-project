@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Amplify from 'aws-amplify';
-import { API } from 'aws-amplify';
-import axios from "axios";
+//import { API } from 'aws-amplify';
+//import axios from "axios";
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 
@@ -70,7 +70,7 @@ class Question extends Component {
     //const { verified } = this.state;
     e.preventDefault();
     // add calls to AWS API Gatewary and add items endpoint here
-    try{
+    /*try{
       const params = {
         AvailableAfternoon: this.state.dict['AvailableAfternoon'],
         AvailableEvenings: this.state.dict['AvailableEvenings'],
@@ -110,7 +110,7 @@ class Question extends Component {
       }});
     }catch(err){
       console.log(`An error has occured: ${err}`);
-    }
+    }*/
     e.target.reset();
   }
 

@@ -56,7 +56,7 @@ nav.navbar.navbar-custom{
   font-size: 12pt;
   display: inline-block;
   padding: 10px;
-  color: white;
+  color: white !important;
 }
   
 ul.nav.navbar-nav {
@@ -130,4 +130,46 @@ input.error{
   flex-direction: column;
   margin-bottom: 10px;
   width: 100%;
+}
+
+
+.form-check-label{
+  padding-left: 2em;
+}
+
+#username{
+  display: grid;
+   grid-column: 1 / 3;
+}
+
+#password{
+    display: grid;
+   grid-column: 1 / 3;
+}
+
+.questionWell {
+  min-width: 20%;
+  
+}
+
+.wellSignUp {
+margin-left:20%;
+margin-right: 20%;
+}
+
+.loginWell {
+  min-width: 20%;
+}
+
+.btn-login {
+  margin-top: 1em;
+}
+
+.navbar-collapse.in {
+    display: block !important;
+}
+
+.navbar-usf-colors{
+    background-color: #0E4700;
+
 }

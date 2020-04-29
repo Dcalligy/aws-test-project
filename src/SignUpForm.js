@@ -76,13 +76,35 @@ class SignUpForm extends Component {
     e.target.reset();
   }
 
-
+  /**
+   * @param {React.ChangeEvent<HTMLInputElement>} e
+   */
   handleChange(e) {
-
+    // this is a shorthand for using "name" field to set the state
     const { name, value } = e.target;
     this.setState({ [name]: value });
 
-
+    // if (e.target.id === 'username') {
+    //   this.setState({
+    //     username: e.target.value
+    //   });
+    // } else if (e.target.id === 'password') {
+    //   this.setState({
+    //     password: e.target.value
+    //   });
+    // } else if (e.target.id === 'confirmPassword') {
+    //   this.setState({
+    //     confirmPassword: e.target.value
+    //   });
+    // } else if (e.target.id === 'email') {
+    //   this.setState({
+    //     email: e.target.value
+    //   });
+    // } else if (e.target.id === 'confirmationCode') {
+    //   this.setState({
+    //     confirmationCode: e.target.value
+    //   });
+    // }
   }
 
   render() {
@@ -103,8 +125,19 @@ class SignUpForm extends Component {
                   value={this.state.confirmationCode}
                   onChange={this.handleChange}
                 />
-                {
-                /}
+                {/*
+                  <div className="confirmationCode">
+                    <label htmlFor="confirmationCode">Confirmation Code: </label>
+                    <input
+                      id="confirmationCode"
+                      name="confirmationCode"
+                      placeholder="Confirmation code"
+                      type="text"
+                      value={this.state.confirmationCode}
+                      onChange={this.handleChange}
+                    />
+                  </div>
+                */}
                 <div className="field">
                   <p className="control">
                     <button type="submit" className="btn btn-custom">

@@ -78,7 +78,7 @@ class SignInForm extends Component {
           
             <article>
                           <h1>Login</h1>
-          <div className="well text-left loginWell">
+          <div className="well d-inline-flex text-left loginWell justify-content-center">
             <section className="section auth">
             <div className="container">
 

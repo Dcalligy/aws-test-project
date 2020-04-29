@@ -68,7 +68,9 @@ class Question extends Component {
   }
   
   handleSubmit(e) {
+    //const { verified } = this.state;
     e.preventDefault();
+    // add calls to AWS API Gatewary and add items endpoint here
     try{
       const params = {
         AvailableAfternoon: this.state.dict['AvailableAfternoon'],
@@ -113,8 +115,11 @@ class Question extends Component {
     e.target.reset();
   }
 
+  /**
+   * @param {React.ChangeEvent<HTMLInputElement>} e
+   */
   handleChange(e) {
-
+    // this is a shorthand for using "name" field to set the state
     var { name, value } = e.target;
     changeme(name);
     value = dict[name];
@@ -122,14 +127,17 @@ class Question extends Component {
   }
   
 
-render() {
-    return (
+  render() {
+      return (
+        
+        
+        
         <article>
         <div className="container">
         <h1>Questionaire</h1>
         </div>
 
-        <div className="well text-left questionWell">
+        <div className="well d-inline-flex text-left questionWell">
           <section className="section questions ">
         
         
@@ -141,6 +149,7 @@ render() {
                 <input type="checkbox"
                   className="form-check-input"
                   id="AvailableMornings"
+                  //label="AvailableMornings"
                   checked={!!this.state.AvailableMornings}
                   name="AvailableMornings"
                   onChange={this.handleChange}
@@ -151,6 +160,7 @@ render() {
         <input type="checkbox"
                   className="form-check-input"
                   id="AvailableAfternoon"
+                  //label="AvailableAfternoon"
                   checked={!!this.state.AvailableAfternoon}
                   name="AvailableAfternoon"
                   onChange={this.handleChange}
@@ -161,6 +171,7 @@ render() {
         <input type="checkbox"
                   className="form-check-input"
                   id="AvailableEvenings"
+                  //label="AvailableEvenings"
                   checked={!!this.state.AvailableEvenings}
                   name="AvailableEvenings"
                   onChange={this.handleChange}
@@ -177,6 +188,7 @@ render() {
                 <input type="checkbox"
                   className="form-check-input"
                   id="Project1"
+                  //label="Project1"
                   checked={!!this.state.Project1}
                   name="Project1"
                   onChange={this.handleChange}
@@ -187,6 +199,7 @@ render() {
                 <input type="checkbox"
                   className="form-check-input"
                   id="Project2"
+                  //label="Project2"
                   checked={!!this.state.Project2}
                   name="Project2"
                   onChange={this.handleChange}
@@ -196,6 +209,7 @@ render() {
                 <input type="checkbox"
                   className="form-check-input"
                   id="Project3"
+                  //label="Project3"
                   checked={!!this.state.Project3}
                   name="Project3"
                   onChange={this.handleChange}
@@ -205,6 +219,7 @@ render() {
                 <input type="checkbox"
                   className="form-check-input"
                   id="Project4"
+                  //label="Project4"
                   checked={!!this.state.Project4}
                   name="Project4"
                   onChange={this.handleChange}
@@ -214,6 +229,7 @@ render() {
                 <input type="checkbox"
                   className="form-check-input"
                   id="Project5"
+                  //label="Project5"
                   checked={!!this.state.Project5}
                   name="Project5"
                   onChange={this.handleChange}
@@ -222,6 +238,7 @@ render() {
                 <input type="checkbox"
                   className="form-check-input"
                   id="Project6"
+                  //label="Project6"
                   checked={!!this.state.Project6}
                   name="Project6"
                   onChange={this.handleChange}
@@ -236,6 +253,7 @@ render() {
                 <input type="checkbox"
                   className="form-check-input"
                   id="SkillCompEngineering"
+                  //label="SkillCompEngineering"
                   checked={!!this.state.SkillCompEngineering}
                   name="SkillCompEngineering"
                   onChange={this.handleChange}
@@ -246,6 +264,7 @@ render() {
         <input type="checkbox"
                   className="form-check-input"
                   id="SkillDatabase"
+                  //label="SkillDatabase"
                   checked={!!this.state.SkillDatabase}
                   name="SkillDatabase"
                   onChange={this.handleChange}
@@ -256,6 +275,7 @@ render() {
         <input type="checkbox"
                   className="form-check-input"
                   id="SkillMechEngineering"
+                  //label="SkillMechEngineering"
                   checked={!!this.state.SkillMechEngineering}
                   name="SkillMechEngineering"
                   onChange={this.handleChange}
@@ -266,6 +286,7 @@ render() {
         <input type="checkbox"
                   className="form-check-input"
                   id="SkillNetworkDesign"
+                  //label="SkillNetworkDesign"
                   checked={!!this.state.SkillNetworkDesign}
                   name="SkillNetworkDesign"
                   onChange={this.handleChange}
@@ -276,6 +297,7 @@ render() {
         <input type="checkbox"
                   className="form-check-input"
                   id="SkillProgramming"
+                  //label="SkillProgramming"
                   checked={!!this.state.SkillProgramming}
                   name="SkillProgramming"
                   onChange={this.handleChange}
@@ -286,6 +308,7 @@ render() {
         <input type="checkbox"
                   className="form-check-input"
                   id="SkillWebDesign"
+                  //label="SkillWebDesign"
                   checked={!!this.state.SkillWebDesign}
                   name="SkillWebDesign"
                   onChange={this.handleChange}

@@ -16,7 +16,8 @@ export default class NavBar extends Component{
     }
   }
   render(){
-      return (
+      return(
+          // Header using Bootstrap
           <header role="banner">
             <nav className="navbar navbar-default navbar-usf-colors">
         <button type="button" 

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Auth } from 'aws-amplify';
+//import { Auth } from 'aws-amplify';
 
 export default class NavBar extends Component{
-  handleLogOut = async event =>{
+  /*handleLogOut = async event =>{
     event.preventDefault();
     try{
       Auth.signOut();
@@ -11,7 +11,7 @@ export default class NavBar extends Component{
     }catch(error){
       console.log(error.message);
     }
-  }
+  }*/
   render(){
       return(
           // Header using Bootstrap
@@ -24,8 +24,8 @@ export default class NavBar extends Component{
 
                     <a className="navbar-brand" href="/">USF</a>
                     <a className="navbar-brand" href="/">Home</a>
-                    <a className="navbar-brand" href="#">Groups</a>
-                    <a className="navbar-brand" href="#">Questionnaire</a>
+                    <a className="navbar-brand" href="/groups">Groups</a>
+                    <a className="navbar-brand" href="/questionnaire">Questionnaire</a>
                     
                   </ul>
                   
@@ -44,7 +44,7 @@ export default class NavBar extends Component{
                         </a>
                       )}
                       {this.props.auth.isAuthenticated && (
-                        <a href="/" onClick={this.handleLogOut} className="btn btn-custom">
+                        <a href="/"  className="btn btn-custom">
                           Log out
                         </a>
                       )}

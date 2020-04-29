@@ -43,6 +43,7 @@ class App extends Component {
         this.setState({ isAuthenticating: false });
     }
     render() {
+        //const { signedUp } = this.state;
         const authProps = {
             isAuthenticated: this.state.isAuthenticated,
             user: this.state.user,
@@ -50,6 +51,16 @@ class App extends Component {
             setUser: this.setUser
         }
         return (
+          /*<Router>
+            <Navbar/>
+            <div>
+            <button onClick={ this.handleSignup }>Toggle</button>
+            { !signedUp ? <SignUpForm /> : <SignInForm />}
+          </div>
+          <Footer />
+          </Router>
+          <Route exact path="/groups" render={(props) => <Groups {...props} auth={authProps} />} />
+          */
            !this.state.isAuthenticated &&
            <div className="App">
                <Router>

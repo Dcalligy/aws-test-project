@@ -8,7 +8,7 @@ class Groups extends Component{
                 <h1>Groups</h1> 
             </div>
 
-<div className="well wellSignUp">
+
             <div className="container">
                 <div className="row">
                 <div className="col-lg-12"> 
@@ -135,7 +135,6 @@ class Groups extends Component{
       </div>
     </div>
     </div>
-      </div>
     </article>
     )
     }

@@ -116,7 +116,6 @@ class SignUpForm extends Component {
           <section className="section auth">
             <div className="container">
               <h1>Create an Account</h1>
-         <div className="well">
               <form onSubmit={this.handleSubmit}>
                 <TextInput
                   id="confirmationCode"
@@ -146,7 +145,6 @@ class SignUpForm extends Component {
                   </p>
                 </div>
               </form>
-        </div>
             </div>
           </section>
         </article>
@@ -154,11 +152,9 @@ class SignUpForm extends Component {
     } else {
       return (
         <article>
-        <h1>Create an Account</h1>
-        <div className="well wellSignUp">
           <section className="section auth">
             <div className="container">
-              
+              <h1>Create an Account</h1>
               <form onSubmit={this.handleSubmit}>
                 <div className="username">
                   <label htmlFor="username">Username: </label>
@@ -220,7 +216,6 @@ class SignUpForm extends Component {
               </form>
             </div>
           </section>
-        </div>
         </article>
       );
     }

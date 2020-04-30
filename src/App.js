@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Navbar';
@@ -65,12 +65,32 @@ class App extends Component {
            <div className="App">
                <Router>
                    <div>
-                       <Navbar />
+                       <header role="banner">
+                          <nav className="navbar navbar-default navbar-usf-colors">
+                            <button type="button" 
+                              className="navbar-toggle" 
+                              data-toggle="collapse" 
+                              data-target="#navbarNavDropdown">
+                              <span className="icon-bar"></span>
+                              <span className="icon-bar"></span>
+                              <span className="icon-bar"></span>
+                            </button>
+                            <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                                <ul className="nav navbar-nav ">
+                                  <li><Link to="/" className="navbar-Link">USF</Link></li>
+                                  <li><Link to="/" className="navbar-Link">Home</Link></li>
+                                  <li><Link to="/questionnaire" className="navbar-Link">Questionnaire</Link></li>
+                                  <li><Link to="/groups" className="navbar-Link">Groups</Link></li>
+                                  <li><Link to="/login" className="navbar-Link">Login</Link></li>
+                                </ul>           
+                              </div>
+                            </nav>  
+                      </header>
                        <Switch>
-                           <Route exact path="/" component={SignUpForm} />} />
-                           <Route exact path="/login" component={SignInForm} />
-                           <Route exact path="/questionnaire" component={Question} />
-                           <Route exact path="/groups" component={Groups} />
+                           <Route exact path="/" render={(props) => <SignUpForm {...props} auth={authProps} />} />
+                           <Route exact path="/login" render={(props) => <SignInForm {...props} auth={authProps} />} />
+                           <Route exact path="/questionnaire" render={(props) => <Question {...props} auth={authProps} />} />
+                           <Route exact path="/groups" render={(props) => <Groups {...props} auth={authProps} />} />
                        </Switch>
                        <Footer />
                    </div>

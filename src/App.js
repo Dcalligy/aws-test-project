@@ -14,7 +14,7 @@ import  { Auth } from 'aws-amplify';
 Amplify.configure(aws_exports);
 
 class App extends Component {
-    /*state = {
+    state = {
         isAuthenticated: false,
         isAuthenticating: true,
         user: null
@@ -41,15 +41,15 @@ class App extends Component {
             }
         }
         this.setState({ isAuthenticating: false });
-    }*/
+    }
     render() {
         //const { signedUp } = this.state;
-        /*const authProps = {
+        const authProps = {
             isAuthenticated: this.state.isAuthenticated,
             user: this.state.user,
             setAuthStatus: this.setAuthStatus,
             setUser: this.setUser
-        }*/
+        }
         return (
           /*<Router>
             <Navbar/>
@@ -61,7 +61,7 @@ class App extends Component {
           </Router>
           <Route exact path="/groups" render={(props) => <Groups {...props} auth={authProps} />} />
           */
-           //!this.state.isAuthenticated &&
+           !this.state.isAuthenticated &&
            <div className="App">
                <Router>
                    <div>

@@ -180,3 +180,7 @@ margin-right: 20%;
   padding: 10px;
   color: white !important;
 }
+
+.groupsWell {
+  min-width: 60%;
+}

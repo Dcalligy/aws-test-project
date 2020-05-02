@@ -8,7 +8,7 @@ class Groups extends Component{
                 <h1>Groups</h1> 
             </div>
 
-<div className="well d-inline-flex text-left questionWell">
+<div className="well d-inline-flex text-left groupsWell">
             <div className="container">
                 <div className="row">
                 <div className="col-lg-12"> 

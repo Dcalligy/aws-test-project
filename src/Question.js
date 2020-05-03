@@ -71,6 +71,8 @@ class Question extends Component {
     //const { verified } = this.state;
     e.preventDefault();
     // add calls to AWS API Gatewary and add items endpoint here
+    
+    if ((dict['AvailableAfternoon'] == true|| dict['AvailableEvenings'] == true || dict['AvailableMornings'] == true) && (dict['Project1'] == true || dict['Project2'] == true || dict['Project3'] == true || dict['Project4'] == true || dict['Project5'] == true || dict['Project6'] == true) && (dict['SkillCompEngineering'] == true || dict['SkillDatabase'] == true|| dict['SkillMechEngineering'] == true || dict['SkillNetworkDesign'] == true || dict['SkillProgramming'] == true || dict['SkillWebDesign'] == true)) {
     try{
       const params = {
         AvailableAfternoon: this.state.dict['AvailableAfternoon'],
@@ -111,10 +113,15 @@ class Question extends Component {
       }});
     }catch(err){
       console.log(`An error has occured: ${err}`);
+    } 
+      alert ('Submission successful! You may now close this tab.');
+      e.target.reset();}
+    else {
+      alert ('Submission failed. Please make sure to check at least one box in each category.');}
     }
-   alert('Submit successful! Please close this tab now.');
-    e.target.reset();
-  }
+    
+   
+  
 
   /**
    * @param {React.ChangeEvent<HTMLInputElement>} e

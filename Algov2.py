@@ -1,13 +1,16 @@
-''' Algorithm for Senior Project'''
+'''Project DMX Algorithm
+    By: Dakota Nalls'''
 '''Required elements for answers table: ID, AvailableMornings, AvailableAfternoons, AvailabilityEvening, Project1, 
    Project2, Project3, Project4, Project5, Project6, SkillProgramming, SkillWebDesign, SkillMechEngineering,
    SkillNetworkDesign, SkillDatabase, SkillCompEngineering'''
 import math
 import boto3
+import awscli
 
 'This is where we need to get the list from the database'
 
-answerList = [
+'Right now we will use a hardcoded database'
+'''answerList = [
     [1, True, False, False, True, False, True, False, False, False, True, False, False, False, True, True],
     [2, True, True, False, False, True, True, False, False, False, True, True, False, False, False, False],
     [3, True, True, True, False, False, True, False, False, False, True, True, False, False, False, False],
@@ -23,13 +26,26 @@ answerList = [
     [13, True, False, False, False, True, False, False, False, True, True, True, False, False, False, True],
     [14, True, False, True, True, True, False, False, False, False, False, False, True, True, False, False],
     [15, False, True, False, False, False, True, False, True, False, False, True, True, False, False, False],
-    [16, True, True, True, False, False, False, False, False, True, True, False, False, True, False, False],
+    [16, True, True, True, False, False, True, False, False, True, True, False, False, True, False, False],
     [17, True, True, True, True, True, True, True, True, True, True, True, True, True, True, True],
-    [18, False, False, True, False, False, False, True, False, False, False, False, False, False, True, False]]
+    [18, False, False, True, False, False, False, True, False, False, False, False, False, False, True, False],
+    [19, False, False, True, True, False, True, False, False, False, True, True, False, False, True, False],
+    [20, False, False, False, False, False, True, False, False, False, True, True, True, True, False, True],
+    [21, False, False, True, True, True, False, True, True, True, False, False, False, True, True, True],
+    [22, True, True, True, False, True, False, True, False, False, True, False, True, False, True, False],
+    [23, True, True, True, True, True, True, False, False, False, False, False, False, True, True, False],
+    [24, True, False, False, True, True, False, False, True, True, False, False, True, True, False, True],
+    [25, False, True, True, False, False, True, True, False, False, True, True, False, False, True, True],
+    [26, True, True, False, False, True, True, False, False, False, True, True, False, False, False, True],
+    [27, True, True, True, False, False, True, False, False, False, False, False, False, True, True, False],
+    [28, False, True, False, True, False, True, True, False, False, True, False, False, False, False, True],
+    [29, False, False, True, False, False, False, False, True, False, False, False, True, False, True, True],
+    [30, True, True, False, False, True, False, False, False, False, True, False, False, False, True, False]]'''
 
 groupList = []
 Dict = {}
 problemStudents = []
+answerList = []
 
 def sortAlgo(answerList):
     length = len(answerList)
@@ -65,10 +81,10 @@ def sortAlgo(answerList):
             answerList.pop(0)
             break
 
-        print(answerList[0][0])
+        '''print(answerList[0][0])
         print(answerList[student][0])
         print(length)
-        print(student)
+        print(student)'''
 
         if answerList[0][element] is True and answerList[student][element] is True:
             validationList[0] += 1
@@ -146,7 +162,7 @@ def sortAlgo(answerList):
         else:
             validationList[2] += 1
 
-        print(validationList)
+        'print(validationList)'
 
         for i in validationList:
             if i == 0:
@@ -155,14 +171,14 @@ def sortAlgo(answerList):
         if valCheck == True:
             tempGroup.append(answerList[student])
             tempStuID.append(stuPos)
-            print('Put into Temp Group')
+            ''''print('Put into Temp Group')'''
             for i in simAvailTemp:
                 simAvail.append(i)
             for i in simProjectsTemp:
                 simProjects.append(i)
             updateGroup = True
 
-        print(simAvail)
+        'print(simAvail)'
 
         if len(tempGroup) == 3:
             if tempGroup[1][10] == tempGroup[2][10]:
@@ -197,7 +213,7 @@ def sortAlgo(answerList):
                 diffSkills.append(6)
 
             for i in set(simAvail):
-                print('Count of simAvail', simAvail.count(i))
+                '''print('Count of simAvail', simAvail.count(i))'''
                 if simAvail.count(i) == 2:
                     sameAvail = True
 
@@ -209,16 +225,16 @@ def sortAlgo(answerList):
             print(set(diffSkills))'''
 
             for i in set(diffSkills):
-                print('Count of diffSkills', diffSkills.count(i))
+                ''''print('Count of diffSkills', diffSkills.count(i))'''
                 if diffSkills.count(i) < 2:
                     uniqueSkill = True
 
-            print(simAvail)
+            '''print(simAvail)
             'print(simProjects)'
 
             print(uniqueSkill)
             print(sameProject)
-            print(sameAvail)
+            print(sameAvail)'''
 
             if uniqueSkill is True and sameProject is True and sameAvail is True:
                 groupList.append(tempGroup)
@@ -238,25 +254,25 @@ def sortAlgo(answerList):
                 continue
         else:
             if iterCount >= 2 and len(tempGroup) > 2 and updateGroup is True:
-                print('Length of simAvailTemp', len(simAvailTemp))
-                print('Length of simAvail', len(simAvail))
+                '''print('Length of simAvailTemp', len(simAvailTemp))'
+                'print('Length of simAvail', len(simAvail))'''
                 for i in simAvailTemp:
                     simAvail.pop()
                 if len(tempGroup) > 2:
                     for i in simProjectsTemp:
                         simProjects.pop()
         iterCount += 1
-        print(simAvail)
-        print('Length of temp group', len(tempGroup))
+        '''print(simAvail)
+        print('Length of temp group', len(tempGroup))'''
 
-    for i in answerList:
+    '''for i in answerList:
         print(i)
     print('')
     for i in groupList:
         for x in i:
             print(x)
         print('')
-    print('')
+    print('')'''
 
 
     stuAdded = False
@@ -278,8 +294,8 @@ def sortAlgo(answerList):
                         while stuCount <= 3:
                             if stuAdded == False:
                                 while elementCount <= 3:
-                                    print(stu[elementCount])
-                                    print(groupList[groupCount][stuCount][elementCount])
+                                    'print(stu[elementCount])'
+                                    'print(groupList[groupCount][stuCount][elementCount])'
                                     if stu[elementCount] is True and groupList[groupCount][stuCount][elementCount] is True:
                                         groupList[groupCount].append(stu)
                                         stuAdded = True
@@ -294,6 +310,10 @@ def sortAlgo(answerList):
                         break
                     groupCount += 1
 
+        '''for i in problemStudents:
+            print(i)
+            print('')'''
+
         for stu in problemStudents:
             stuAdded = False
             groupCount = 0
@@ -305,7 +325,7 @@ def sortAlgo(answerList):
                     groupCount += 1
                 else:
                     if stuAdded == False:
-                        while stuCount <= 3:
+                        while stuCount < len(problemStudents):
                             if stuAdded == False:
                                 while elementCount <= 3:
                                     if stu[elementCount] is True and groupList[groupCount][stuCount][elementCount] is True:
@@ -322,17 +342,78 @@ def sortAlgo(answerList):
                         break
                     groupCount += 1
 
+dynamodb = boto3.resource('dynamodb', aws_access_key_id='AKIAIPDQF7KNBEGEDCBA', aws_secret_access_key='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', region_name='us-east-1')
+table = dynamodb.Table('answersTable-projectenv')
+i = 1
+templist = []
 
+response1 = table.scan()
 
+for x in response1['Items']:
+
+    response2 = table.get_item(
+       Key={
+            'ID': str(i)
+        }
+    )
+
+    item = response2['Item']
+    id = item['ID']
+    avail1 = item['AvailableEvenings']
+    avail2 = item['AvailableAfternoons']
+    avail3 = item['AvailableMornings']
+    proj1 = item['Project1']
+    proj2 = item['Project2']
+    proj3 = item['Project3']
+    proj4 = item['Project4']
+    proj5 = item['Project5']
+    proj6 = item['Project6']
+    skill1 = item['SkillProgramming']
+    skill2 = item['SkillWebDesign']
+    skill3 = item['SkillMechEngineering']
+    skill4 = item['SkillNetworkDesign']
+    skill5 = item['SkillDatabase']
+    skill6 = item['SkillCompEngineering']
+
+    templist.append(int(id))
+    templist.append(avail1)
+    templist.append(avail2)
+    templist.append(avail3)
+    templist.append(proj1)
+    templist.append(proj2)
+    templist.append(proj3)
+    templist.append(proj4)
+    templist.append(proj5)
+    templist.append(proj6)
+    templist.append(skill1)
+    templist.append(skill2)
+    templist.append(skill3)
+    templist.append(skill4)
+    templist.append(skill5)
+    templist.append(skill6)
+    answerList.append(templist)
+    templist = []
+    i += 1
+
+downloadPath = input("Enter your desirable download path for the Group Text File: ")
+downloadPath = downloadPath + "\Groups.txt"
 sortAlgo(answerList)
+groupCount = 1
+file = open(downloadPath, "w")
 
 for i in groupList:
+    file.write('Group' + str(groupCount))
+    file.write('\n')
     for x in i:
-        print(x)
-    print('')
-print('problemStudents')
-for i in problemStudents:
-    print(i)
-    print('')
+        file.write(str(x))
+        file.write('\n')
+    file.write('\n')
+    groupCount += 1
 print('')
+
+
+
+'''for i in problemStudents:
+    print(i)
+    print('')'''
 'This is the part where we put the groupList into the database'

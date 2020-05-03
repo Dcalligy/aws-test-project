@@ -181,7 +181,7 @@ alert('Submit successful! Please close this tab now.');
                       type="text"
                       id="StudentName"
                       name="StudentName"
-                      placeholder="Enter username"
+                      placeholder="John Smith"
                     onChange={this.handleChange}
 
                     />
@@ -193,6 +193,7 @@ alert('Submit successful! Please close this tab now.');
                       type="Email"
                       id="StudentEmail"
                       name="StudentEmail"
+                      placeholder="Example@email.com"
                       value={this.state.value}
                       onChange={this.handleChange}
                     />

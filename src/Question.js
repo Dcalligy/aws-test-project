@@ -24,9 +24,7 @@ AvailableEvenings: false,
 "SkillNetworkDesign": false,
 "SkillProgramming": false,
 "SkillWebDesign": false,
- id: '',
-StudentEmail: '',
-StudentName: ''
+ id: ''
 
 };
 
@@ -38,7 +36,6 @@ function changeme (x){
     dict[x] = true;
   }
 };
-
 
 
 class Question extends Component {
@@ -61,8 +58,6 @@ class Question extends Component {
       "SkillNetworkDesign": dict['SkillNetworkDesign'],
       "SkillProgramming": dict['SkillProgramming'],
       "SkillWebDesign": dict['SkillWebDesign'],
-        StudentEmail: '',
-        StudentName: '',
       ID: ''
       
 
@@ -77,7 +72,6 @@ class Question extends Component {
     e.preventDefault();
     // add calls to AWS API Gatewary and add items endpoint here
     try{
-      
       const params = {
         AvailableAfternoon: this.state.dict['AvailableAfternoon'],
         AvailableEvenings: this.state.dict['AvailableEvenings'],
@@ -94,10 +88,7 @@ class Question extends Component {
         "SkillNetworkDesign": this.state.dict['SkillNetworkDesign'],
         "SkillProgramming": this.state.dict['SkillProgramming'],
         "SkillWebDesign": this.state.dict['SkillWebDesign'],
-        StudentEmail: '',
-        StudentName: '',
         ID: ''
-
       };
       axios.post(`https://p714kevuqi.execute-api.us-east-1.amazonaws.com/answersTable-projectenv`, params);
       e.this.setState({ answers: [...this.state.answers, this.state.newanswers ] });
@@ -116,18 +107,11 @@ class Question extends Component {
         "SkillNetworkDesign": this.state.dict['SkillNetworkDesign'],
         "SkillProgramming": this.state.dict['SkillProgramming'],
         "SkillWebDesign": this.state.dict['SkillWebDesign'],
-        StudentEmail: '',
-        StudentName: '',
         ID: ''
-
       }});
-      
-      
     }catch(err){
       console.log(`An error has occured: ${err}`);
     }
-    
-alert('Submit successful! Please close this tab now.');
     e.target.reset();
   }
 
@@ -138,19 +122,10 @@ alert('Submit successful! Please close this tab now.');
     // this is a shorthand for using "name" field to set the state
     var { name, value } = e.target;
     changeme(name);
-    
-    if (e.target.className != 'specialInput'){
-      value = dict[name];
-    }
-    
-    
+    value = dict[name];
     this.setState({ [name]: value });
   }
   
-
-
-  
-
 
   render() {
       return (
@@ -166,40 +141,9 @@ alert('Submit successful! Please close this tab now.');
           <section className="section questions ">
         
         
-        
-        
-        
         <div className="container">
             <div className="container">
               <form onSubmit={this.handleSubmit}>
-        
-                      <legend>User Info</legend>
-                <div className="field">
-                    <label htmlFor="StudentName">Name:</label>
-                    <input
-                      className="specialInput"
-                      type="text"
-                      id="StudentName"
-                      name="StudentName"
-                      placeholder="John Smith"
-                    onChange={this.handleChange}
-
-                    />
-                  </div>
-                  <div className="field">
-                    <label htmlFor="StudentEmail">Email:&nbsp;</label>
-                    <input
-                      className="specialInput"
-                      type="Email"
-                      id="StudentEmail"
-                      name="StudentEmail"
-                      placeholder="Example@email.com"
-                      value={this.state.value}
-                      onChange={this.handleChange}
-                    />
-                  </div>
-        
-        
               <legend>Times available</legend>
                 <div className="form-check">
                 <input type="checkbox"
@@ -210,14 +154,6 @@ alert('Submit successful! Please close this tab now.');
                   name="AvailableMornings"
                   onChange={this.handleChange}
                 /><label className="form-check-label">Morning</label></div>
-        
-        <div className="form-check">
-        
-
-        
-        
-        </div>
-        
         
         <div className="form-check">
         

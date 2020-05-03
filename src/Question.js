@@ -4,7 +4,9 @@ import { API } from 'aws-amplify';
 import './App.css';
 import axios from "axios";
 import aws_exports from './aws-exports';
+import { Redirect } from 'react-router';
 Amplify.configure(aws_exports);
+
 
 
 var dict = {
@@ -115,7 +117,9 @@ class Question extends Component {
       console.log(`An error has occured: ${err}`);
     } 
       alert ('Submission successful! You may now close this tab.');
-      e.target.reset();}
+      e.target.reset();
+      this.setState({redirect: true});
+    }
     else {
       alert ('Submission failed. Please make sure to check at least one box in each category.');}
     }
@@ -136,6 +140,11 @@ class Question extends Component {
   
 
   render() {
+       if (this.state.redirect) {
+    return <Redirect push to="/" />;
+  }
+    else {
+    
       return (
         
         
@@ -338,7 +347,7 @@ class Question extends Component {
         </article>
       );
     
-  }
+  }}
 }
 
 export default Question;

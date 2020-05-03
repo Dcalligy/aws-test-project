@@ -112,6 +112,7 @@ class Question extends Component {
     }catch(err){
       console.log(`An error has occured: ${err}`);
     }
+   alert('Submit successful! Please close this tab now.');
     e.target.reset();
   }
 

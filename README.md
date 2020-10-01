@@ -1,4 +1,6 @@
 # projectDMX
+Develop a “student matching” system for this course (“this course” being Senior Project for IT). The scope of this document is the whole system in which we are developing (Front end site, algorithm, database, servers in which everything sits).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
